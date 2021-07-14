@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+<%- include('partials/navigator'); -%>
+
+<div class="container my-4">
+    <div class="row">
+        <%books.forEach(function(book){%>
+            <div class="col-lg-3">
+                <div class="card text-center text-white bg-primary">
+                    <div class="card-header">
+                        <h3><%=book.title%></h3>
+                        <h3><%=book.author%></h3>
+                    </div>
+                    <div class="card-body" >
+                        <img src="<%=book.image%>" class="img-fluid" alt="<%=book.title%>">
+                    </div>
+                    <div class="card-footer">
+                        <h3><%=book.description%></h3>
+                        <a href="/delete/<%=book.id%>" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </div>
+</div>
+
+
+<%- include('partials/footer'); -%>
